@@ -1,0 +1,308 @@
+```html id="0s6qwh"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meal Voucher Management</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f7f9;
+}
+
+/* NAVBAR */
+
+.navbar{
+    width:100%;
+    height:70px;
+    background:#2e7d32;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 30px;
+    position:fixed;
+    top:0;
+    z-index:1000;
+}
+
+.navbar h2{
+    font-size:24px;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    position:fixed;
+    top:70px;
+    left:0;
+    width:240px;
+    height:100%;
+    background:#1b5e20;
+    padding-top:20px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    padding:18px 25px;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.sidebar ul li:hover{
+    background:#388e3c;
+}
+
+.sidebar ul li i{
+    margin-right:10px;
+}
+
+/* MAIN CONTENT */
+
+.main-content{
+    margin-left:240px;
+    margin-top:70px;
+    padding:30px;
+}
+
+/* PAGE TITLE */
+
+.page-title{
+    margin-bottom:25px;
+}
+
+.page-title h1{
+    color:#2e7d32;
+}
+
+/* SEARCH BAR */
+
+.top-section{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.search-box input{
+    padding:10px;
+    width:250px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+/* TABLE */
+
+.table-container{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th{
+    background:#2e7d32;
+    color:white;
+    padding:15px;
+    text-align:left;
+}
+
+table td{
+    padding:15px;
+    border-bottom:1px solid #ddd;
+}
+
+/* STATUS */
+
+.status{
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:14px;
+    color:white;
+}
+
+.pending{
+    background:orange;
+}
+
+.approved{
+    background:#2e7d32;
+}
+
+.rejected{
+    background:red;
+}
+
+/* BUTTONS */
+
+.btn{
+    padding:8px 14px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    color:white;
+    margin-right:5px;
+}
+
+.approve-btn{
+    background:#2e7d32;
+}
+
+.reject-btn{
+    background:red;
+}
+
+.view-btn{
+    background:#1976d2;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .sidebar{
+        width:200px;
+    }
+
+    .main-content{
+        margin-left:200px;
+    }
+
+    table{
+        font-size:14px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+    <h2>UniFoodCare Portal</h2>
+
+    <div>
+        <i class="fa-solid fa-user"></i> HEP Staff
+    </div>
+</div>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <ul>
+        <li><i class="fa-solid fa-chart-line"></i> Dashboard</li>
+        <li><i class="fa-solid fa-box"></i> Inventory</li>
+        <li><i class="fa-solid fa-users"></i> Meal Voucher</li>
+        <li><i class="fa-solid fa-hand-holding-heart"></i> Donors</li>
+        <li><i class="fa-solid fa-right-from-bracket"></i> Logout</li>
+    </ul>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main-content">
+
+    <div class="page-title">
+        <h1>Meal Voucher Management</h1>
+        <p>Manage student meal voucher applications</p>
+    </div>
+
+    <!-- SEARCH SECTION -->
+
+    <div class="top-section">
+
+        <div class="search-box">
+            <input type="text" placeholder="Search student...">
+        </div>
+
+    </div>
+
+    <!-- TABLE -->
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Course</th>
+                <th>Reason</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+
+            <tr>
+                <td>2024123456</td>
+                <td>Ahmad Firdaus</td>
+                <td>Bachelor of Science</td>
+                <td>Financial difficulties and insufficient daily meal expenses.</td>
+                <td>
+                    <span class="status pending">Pending</span>
+                </td>
+                <td>
+                    <button class="btn approve-btn">Approve</button>
+                    <button class="btn reject-btn">Reject</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>2024987654</td>
+                <td>Siti Nur Aisyah</td>
+                <td>Bachelor of Computer Science</td>
+                <td>Family income affected due to unemployment.</td>
+                <td>
+                    <span class="status approved">Approved</span>
+                </td>
+                <td>
+                    <button class="btn view-btn">View</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>2024556677</td>
+                <td>Daniel Kasim</td>
+                <td>Bachelor of Information Technology</td>
+                <td>I am supporting my education independently and have difficulty managing living and food expenses each month.</td>
+                <td>
+                    <span class="status rejected">Rejected</span>
+                </td>
+                <td>
+                    <button class="btn view-btn">View</button>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+```
