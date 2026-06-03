@@ -13,3 +13,5 @@ ZAID HARITHAH BIN AZHAR	2024276104
 FARHAN AQIL HILMI BIN SHAIFUL	2024207824
 NAZHIIF BIN NAPI	2025425624
 
+Run Program Instruction
+1. Open the login.html from with any web browser.
